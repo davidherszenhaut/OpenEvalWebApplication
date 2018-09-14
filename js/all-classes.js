@@ -1,6 +1,6 @@
 var https = require('https');
 var fs = require('fs');
-var jsdom = require('jsdom');
+// var jsdom = require('jsdom');
 
 module.exports = {
     inputListener: function(searchString) {
@@ -31,10 +31,3 @@ module.exports = {
         });
     }
 };
-
-/*
-
-go back to form style
-make new page same look as all-classes but only display matching search term
-
-*/

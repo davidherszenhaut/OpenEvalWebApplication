@@ -31,6 +31,12 @@ app.use('*', function(req, res) {
 var allClasses = require('./js/all-classes.js');
 allClasses.getClasses('https://openeval-server.herokuapp.com/classes');
 
+var parser = require('body-parser');
+app.use(parser.urlencoded({ extended: true }));
+app.post('/search', function(req, res) {
+    console.log(req.body.courseName);
+});
+
 // start local server
 
 app.listen(3000, function() {

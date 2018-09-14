@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>OpenEval</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body>
+
+    <div>
+
+        <div>
+            <nav class="navbar navbar-inverse" role="navigation" style="padding-left: 10%;">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Current Classes</a></li>
+                    <li class="active"><a href="/all-classes">All Classes<span class="sr-only">(current)</span></a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="jumbotron">
+            <p>Search for a course here</p>
+            <form action="/search" method="post">
+                <label for="class-name">Course name:</label>
+                <input id="class-name" type="text" name="courseName" placeholder="e.g. CS 1331">
+                <input type="submit" value="Search">
+            </form>
+            <p>List of all courses here</p>
+            <div class="class-list"></div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="../js/all-classes.js"></script>
+
+</body>
+
+</html>
