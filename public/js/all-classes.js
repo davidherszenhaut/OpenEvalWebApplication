@@ -1,7 +1,7 @@
 var https = require('https');
 var fs = require('fs');
-// const jsdom = require('jsdom');
-// const JSDOM = jsdom;
+const jsdom = require('jsdom');
+const JSDOM = jsdom;
 
 module.exports = {
     inputListener: function(searchString) {
@@ -32,7 +32,6 @@ module.exports = {
         });
     },
     getClassesJSDOM: function(url) {
-        console.log('test');
         https.get(url, function(res) {
             var body = '';
             res.on('data', function(chunk) {
@@ -42,6 +41,9 @@ module.exports = {
                 var res = JSON.parse(body);
                 classList = '';
                 courses = res.message;
+                for (var i = 0; i < courses.length - 1; i++) {
+                    console.log("Course Number: " + courses[i].courseNumber + ", Course Name: " + courses[i].courseName);
+                }
             });
         }).on('error', function(err) {
             console.log(err);

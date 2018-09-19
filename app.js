@@ -19,6 +19,10 @@ router.get('/all-classes', function(req, res) {
     res.sendFile(path + 'all-classes.html');
 });
 
+router.get('/search', function(req, res) {
+    res.sendFile(path + 'search.html');
+});
+
 router.get('/about', function(req, res) {
     res.sendFile(path + 'about.html');
 });
@@ -31,9 +35,10 @@ app.use('*', function(req, res) {
     res.send('404 Not Found');
 });
 
-// logic from ./js/ files
+// logic from ./public/js/ files
 
 var allClasses = require('./public/js/all-classes.js');
+// allClasses.getClasses('https://openeval-server.herokuapp.com/classes');
 allClasses.getClassesJSDOM('https://openeval-server.herokuapp.com/classes');
 
 var parser = require('body-parser');
