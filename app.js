@@ -5,6 +5,7 @@ var app = express();
 var router = express.Router();
 
 var path = __dirname + '/views/';
+app.use(express.static('public'));
 
 // routing for views
 
@@ -22,14 +23,18 @@ router.get('/about', function(req, res) {
     res.sendFile(path + 'about.html');
 });
 
+router.get('/login', function(req, res) {
+    res.sendFile(path + 'login.html');
+});
+
 app.use('*', function(req, res) {
     res.send('404 Not Found');
 });
 
 // logic from ./js/ files
 
-var allClasses = require('./js/all-classes.js');
-allClasses.getClasses('https://openeval-server.herokuapp.com/classes');
+var allClasses = require('./public/js/all-classes.js');
+allClasses.getClassesJSDOM('https://openeval-server.herokuapp.com/classes');
 
 var parser = require('body-parser');
 app.use(parser.urlencoded({ extended: true }));

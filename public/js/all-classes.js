@@ -1,6 +1,7 @@
 var https = require('https');
 var fs = require('fs');
-// var jsdom = require('jsdom');
+// const jsdom = require('jsdom');
+// const JSDOM = jsdom;
 
 module.exports = {
     inputListener: function(searchString) {
@@ -25,6 +26,22 @@ module.exports = {
                 fs.appendFile('./views/all-classes.html', classList, function(err) {
                     if (err) throw err;
                 });
+            });
+        }).on('error', function(err) {
+            console.log(err);
+        });
+    },
+    getClassesJSDOM: function(url) {
+        console.log('test');
+        https.get(url, function(res) {
+            var body = '';
+            res.on('data', function(chunk) {
+                body += chunk;
+            });
+            res.on('end', function() {
+                var res = JSON.parse(body);
+                classList = '';
+                courses = res.message;
             });
         }).on('error', function(err) {
             console.log(err);

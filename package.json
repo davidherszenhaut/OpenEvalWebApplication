@@ -1,15 +1,23 @@
 {
-  "name": "front",
+  "name": "OpenEvalWebApplication",
   "version": "1.0.0",
-  "description": "",
+  "description": "ERROR: No README data found!",
   "main": "app.js",
   "scripts": {
-  	"start": "node app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidherszenhaut/OpenEvalWebApplication.git"
+  },
+  "bugs": {
+    "url": "https://github.com/davidherszenhaut/OpenEvalWebApplication/issues"
   }
 }
