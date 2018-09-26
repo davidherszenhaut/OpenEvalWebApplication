@@ -2,6 +2,7 @@ var https = require('https');
 var fs = require('fs');
 // const jsdom = require('jsdom');
 // const JSDOM = jsdom;
+const cheerio = require('cheerio');
 
 module.exports = {
     // listens to user input for live search functionality
@@ -46,6 +47,8 @@ module.exports = {
                 courses = res.message;
                 for (var i = 0; i < courses.length - 1; i++) {
                     console.log("Course Number: " + courses[i].courseNumber + ", Course Name: " + courses[i].courseName);
+                    const $ = cheerio.load("Course Number: " + courses[i].courseNumber + ", Course Name: " + courses[i].courseName);
+                    $.html();
                 }
             });
         }).on('error', function(err) {
