@@ -1,5 +1,4 @@
 // express set up
-
 var express = require('express');
 var app = express();
 var router = express.Router();
@@ -8,7 +7,6 @@ var path = __dirname + '/views/';
 app.use(express.static('public'));
 
 // routing for views
-
 app.use('/', router);
 
 router.get('/', function(req, res) {
@@ -36,19 +34,14 @@ app.use('*', function(req, res) {
 });
 
 // logic from ./public/js/ files
-
 var allClasses = require('./public/js/all-classes.js');
 // allClasses.getClasses('https://openeval-server.herokuapp.com/classes');
 allClasses.getClassesJSDOM('https://openeval-server.herokuapp.com/classes');
 
-var parser = require('body-parser');
-app.use(parser.urlencoded({ extended: true }));
-app.post('/search', function(req, res) {
-    console.log(req.body.courseName);
-});
+var defaultQuestions = require('./public/js/default-questions.js');
+defaultQuestions.getDefaultQuestions('https://openeval-server.herokuapp.com/questions/default');
 
 // start local server
-
 app.listen(3000, function() {
     console.log('Live on port 3000');
 });
