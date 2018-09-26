@@ -1,15 +1,17 @@
 var https = require('https');
 var fs = require('fs');
-const jsdom = require('jsdom');
-const JSDOM = jsdom;
+// const jsdom = require('jsdom');
+// const JSDOM = jsdom;
 
 module.exports = {
+    // listens to user input for live search functionality
     inputListener: function(searchString) {
         console.log('testing');
         app.post('/courseSearch', function(req, res) {
             console.log(req.body.course);
         });
     },
+    // old function for getting classes, writes text to file, not proper HTML
     getClasses: function(url) {
         https.get(url, function(res) {
             var body = '';
@@ -31,6 +33,7 @@ module.exports = {
             console.log(err);
         });
     },
+    // new function for getting classes, look into cheerio and jsdom
     getClassesJSDOM: function(url) {
         https.get(url, function(res) {
             var body = '';
