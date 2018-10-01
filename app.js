@@ -36,7 +36,7 @@ app.use('*', function(req, res) {
 // logic from ./public/js/ files
 var allClasses = require('./public/js/all-classes.js');
 // allClasses.getClasses('https://openeval-server.herokuapp.com/classes');
-allClasses.getClassesJSDOM('https://openeval-server.herokuapp.com/classes');
+// allClasses.getClassesJSDOM('https://openeval-server.herokuapp.com/classes');
 
 var surveys = require('./public/js/surveys.js');
 // surveys.getDefaultQuestions('https://openeval-server.herokuapp.com/questions/default');
