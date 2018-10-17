@@ -15,6 +15,7 @@ function getClasses(url) {
             classList = '';
             courses = res.message;
             for (var i = 0; i < courses.length - 1; i++) {
+                console.log(courses[i].courseNumber + ": " + courses[i].courseName);
                 // var node = document.createElement("p");
                 // var text = document.createTextNode(courses[i].courseNumber + ": " + courses[i].courseName);
                 // node.appendChild(text);
