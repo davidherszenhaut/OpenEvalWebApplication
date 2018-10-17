@@ -1,8 +1,8 @@
 var https = require('https');
-const jsdom = require('jsdom');
-const { JSDOM } = jsdom;
+// const jsdom = require('jsdom');
+// const { JSDOM } = jsdom;
 
-const { document } = (new JSDOM('<!doctype html><html><body><div id="class-list"></div></body></html>')).window;
+// const { document } = (new JSDOM('<!doctype html><html><body><div id="class-list"></div></body></html>')).window;
 
 function getClasses(url) {
     https.get(url, function(res) {
@@ -15,10 +15,10 @@ function getClasses(url) {
             classList = '';
             courses = res.message;
             for (var i = 0; i < courses.length - 1; i++) {
-                var node = document.createElement("p");
-                var text = document.createTextNode(courses[i].courseNumber + ": " + courses[i].courseName);
-                node.appendChild(text);
-                document.getElementById("class-list").appendChild(node);
+                // var node = document.createElement("p");
+                // var text = document.createTextNode(courses[i].courseNumber + ": " + courses[i].courseName);
+                // node.appendChild(text);
+                // document.getElementById("class-list").appendChild(node);
             }
         });
     }).on('error', function(err) {
