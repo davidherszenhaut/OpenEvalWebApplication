@@ -11,7 +11,7 @@ module.exports = {
                 var res = JSON.parse(body);
                 // console.log(res.message[0].questions);
                 for (var i = 0; i < res.message[0].questions.length; i++) {
-                    console.log(res.message[0].questions[i].question);
+                    console.log(res.message[0].questions[i].question + res.message[0].questions[i].type);
                 }
             });
         }).on('error', function(err) {
