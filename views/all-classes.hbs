@@ -45,7 +45,7 @@
       <div id="class-list-wrapper">
         <ul id="class-list">
           {{#each this}}
-            <li><button onclick="registerCourse(this.courseNumber, this.courseName, this._id)">{{{this.courseNumber}}}: {{{this.courseName}}}</button></li>
+            <li class={{{this._id}}}><button onclick="registerCourse(this.courseNumber, this.courseName, this._id)">{{{this.courseNumber}}}: {{{this.courseName}}}</button></li>
           {{/each}}
         </ul>
       </div>

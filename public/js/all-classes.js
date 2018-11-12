@@ -85,6 +85,11 @@ module.exports = {
  *
  */
 function registerCourse(courseNumber, courseName, courseID) {
+    const JSONBody = {
+        _id: courseID,
+        courseNumber: courseNumber,
+        courseName: courseName
+    };
     const options = {
         hostname: 'https://openeval-server.herokuapp.com/registeredCourses/cperez',
         port: 443,
