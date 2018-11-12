@@ -37,9 +37,9 @@
     <div class="jumbotron">
       <p>List of current courses here</p>
 
-          <li>CS 1332: Data Struct & Algorithms</li>
-          <li>ACCT 2101: Accounting I</li>
-          <li>CS 1301: Intro to Computing</li>
+        {{#each this}}
+          <li>{{{this.courseNumber}}}: {{{this.courseName}}}</li>
+        {{/each}}
 
       <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newClassModal">+ Add New Class</button>
 
