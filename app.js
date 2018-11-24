@@ -40,11 +40,11 @@ app.use('*', function(req, res) {
 // loading in data
 var allClasses = require('./public/js/all-classes.js');
 allClasses.getAllCourses('https://openeval-server.herokuapp.com/classes/' + '');
-var index = require('./public/js/index.js');
+// var index = require('./public/js/index.js');
 // index.getRegisteredCourses('https://openeval-server.herokuapp.com/registeredCourses/abray3');
-index.getRegisteredCourses('https://openeval-server.herokuapp.com/studentRegCourses/cperez3');
-var surveys = require('./public/js/surveys.js');
-surveys.getActiveSurveys('https://openeval-server.herokuapp.com/surveys/abray3');
+// index.getRegisteredCourses('https://openeval-server.herokuapp.com/studentRegCourses/cperez3');
+// var surveys = require('./public/js/surveys.js');
+// surveys.getActiveSurveys('https://openeval-server.herokuapp.com/surveys/abray3');
 
 // start local server
 app.listen(3000, function() {
