@@ -44,8 +44,9 @@
       <p>List of all courses here</p>
       <div id="class-list-wrapper">
         <ul id="class-list">
-          {{#each this}}
-            <li class={{{this._id}}}><button>{{{this._id}}}</button></li>
+          {{#each message}}
+            <!-- <li class={{{this._id}}}><button>{{{this._id}}}</button></li> -->
+            <li>Key: {{@index}} Value: {{{this._id}}}</li>
           {{/each}}
         </ul>
       </div>
