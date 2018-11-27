@@ -11,30 +11,30 @@ const fs = require('fs');
  * @return none
  *
  */
-// function getAllCourses(url) {
-//     // get request to API endpoint
-//     https.get(url, function(res) {
-//         var body = '';
-//         res.on('data', function(chunk) {
-//             body += chunk;
-//         });
-//         // when data from endpoint has been retrieved
-//         res.on('end', function() {
-//             const res = JSON.parse(body);
-//             // set input and output files for Handlebars template
-//             const inFile = 'views/all-classes.hbs';
-//             const outFile = 'views/all-classes.html';
-//             const data = res.message;
-//             const source = fs.readFileSync(inFile, 'utf8');
-//             const template = handlebars.compile(source, {strict: true});
-//             const result = template(data);
-//             // console.log(result);
-//             fs.writeFileSync(outFile, result);
-//         });
-//     }).on('error', function(err) {
-//         console.log(err);
-//     });
-// }
+function getAllCourses(url) {
+    // get request to API endpoint
+    https.get(url, function(res) {
+        var body = '';
+        res.on('data', function(chunk) {
+            body += chunk;
+        });
+        // when data from endpoint has been retrieved
+        res.on('end', function() {
+            const res = JSON.parse(body);
+            // set input and output files for Handlebars template
+            const inFile = 'views/all-classes.hbs';
+            const outFile = 'views/all-classes.html';
+            const data = res.message;
+            const source = fs.readFileSync(inFile, 'utf8');
+            const template = handlebars.compile(source, {strict: true});
+            const result = template(data);
+            // console.log(result);
+            fs.writeFileSync(outFile, result);
+        });
+    }).on('error', function(err) {
+        console.log(err);
+    });
+}
 
 module.exports = {
     /**
@@ -62,7 +62,11 @@ module.exports = {
                 const data = res.message;
                 const source = fs.readFileSync(inFile, 'utf8');
                 const template = handlebars.compile(source, {strict: true});
-                // console.log(data[0]);
+                // console.log(data);
+                // console.log(data[0].courseName.trim());
+                // for (var i = 0; i < data.length; i++) {
+                //     console.log(data[i].courseName.trim());
+                // }
                 const result = template(data);
                 fs.writeFileSync(outFile, result);
             });
