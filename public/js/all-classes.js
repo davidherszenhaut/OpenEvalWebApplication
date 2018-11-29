@@ -25,10 +25,11 @@ module.exports = {
                 // set input and output files for Handlebars template
                 const inFile = 'views/all-classes.hbs';
                 const outFile = 'views/all-classes.html';
-                const data = res;
+                const data = res.message;
                 const source = fs.readFileSync(inFile, 'utf8');
                 const template = handlebars.compile(source, {strict: true});
                 const result = template(data);
+                // console.log(result);
                 fs.writeFileSync(outFile, result);
             });
         }).on('error', function(err) {

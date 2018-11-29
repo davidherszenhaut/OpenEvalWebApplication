@@ -37,11 +37,17 @@ app.use('*', function(req, res) {
     res.send('404 Not Found');
 });
 
+var user = {
+    "username": "abray3",
+    "password": "",
+    "type": "professor"
+}
+
 // loading in data
 var allClasses = require('./public/js/all-classes.js');
-allClasses.getAllCourses('https://openeval-server.herokuapp.com/classes');
-// var index = require('./public/js/index.js');
-// index.getRegisteredCourses('https://openeval-server.herokuapp.com/registeredCourses/abray3');
+allClasses.getAllCourses('https://openeval-server.herokuapp.com/classes/');
+var index = require('./public/js/index.js');
+index.getRegisteredCourses('https://openeval-server.herokuapp.com/registeredCourses/' + user.username);
 // index.getRegisteredCourses('https://openeval-server.herokuapp.com/studentRegCourses/cperez3');
 // var surveys = require('./public/js/surveys.js');
 // surveys.getActiveSurveys('https://openeval-server.herokuapp.com/surveys/abray3');
