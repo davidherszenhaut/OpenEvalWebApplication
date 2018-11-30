@@ -57,7 +57,7 @@ module.exports = {
                 // set input and output files for Handlebars template
                 const inFile = 'views/index.hbs';
                 const outFile = 'views/index.html';
-                const data = res.message;
+                var data = res.message;
                 const source = fs.readFileSync(inFile, 'utf8');
                 const template = handlebars.compile(source, {strict: true});
                 const result = template(data);

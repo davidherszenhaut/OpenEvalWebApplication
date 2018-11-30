@@ -20,10 +20,23 @@
 
     <h3>Surveys for CS 1332</h3>
 
+    <!-- 
       <li><button class=5be9c3b0389aa4000429cfbc>Test Survey</button></li>
+    
       <li><button class=5be9c62f389aa4000429cfbd>DefaultSurvey</button></li>
+    
       <li><button class=5bff570203a4fc00045bd9b2>New Survey</button></li>
+    
       <li><button class=5bff571503a4fc00045bd9b3>New Survey</button></li>
+     -->
+
+    <form action="/view-results" method="post">
+        <input type="radio" name="surveyID" value="5be9c3b0389aa4000429cfbc"> Test Survey<br>
+        <input type="radio" name="surveyID" value="5be9c62f389aa4000429cfbd"> DefaultSurvey<br>
+        <input type="radio" name="surveyID" value="5bff570203a4fc00045bd9b2"> New Survey<br>
+        <input type="radio" name="surveyID" value="5bff571503a4fc00045bd9b3"> New Survey<br>
+      <input type="submit" value="View this survey's results">
+    </form>
 
     <footer>
       <p>OpenEval | Georgia Tech Junior Design | Fall 2018</p>

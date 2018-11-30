@@ -9,7 +9,7 @@ app.use(express.static('public'));
 // routing for views
 app.use('/', router);
 
-var user;
+user = {};
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -19,8 +19,8 @@ app.post('/', function(req, res) {
         "password": req.body.password,
         "usertype": req.body.usertype
     }
-    console.log('post ', user);
-    console.log('index ', user);
+    // console.log('post ', user);
+    // console.log('index ', user);
     var index = require('./public/js/index.js');
     if (user.usertype == "professor") {
         index.getRegisteredCourses('https://openeval-server.herokuapp.com/registeredCourses/' + user.username);
@@ -29,7 +29,6 @@ app.post('/', function(req, res) {
     }
     res.redirect('/');
 });
-
 // home page
 router.get('/', function(req, res) {
     res.sendFile(path + 'index.html');
@@ -52,16 +51,35 @@ router.get('/about', function(req, res) {
 router.get('/login', function(req, res) {
     res.sendFile(path + 'login.html');
 });
+
+app.post('/view-surveys', function(req, res) {
+    // console.log(req.body.courseNumber);
+    var courseNumber = req.body.courseNumber.split(' ')[0] + '%20' + req.body.courseNumber.split(' ')[1];
+    var professor = req.body.courseNumber.split(' ')[2];
+    // console.log(courseNumber, professor);
+    var activeSurveys = require('./public/js/active-surveys.js');
+    activeSurveys.getActiveSurveys('https://openeval-server.herokuapp.com/surveys/' + professor + '/' + courseNumber);
+    res.redirect('/active-surveys');
+});
 // active surveys page
 router.get('/active-surveys', function(req, res) {
-    var activeSurveys = require('./public/js/active-surveys.js');
-    activeSurveys.getActiveSurveys('https://openeval-server.herokuapp.com/surveys/' + user.username + '/' + 'CS 1332');
+    // console.log(user);
+    // var activeSurveys = require('./public/js/active-surveys.js');
+    // activeSurveys.getActiveSurveys('https://openeval-server.herokuapp.com/surveys/' + user.username + '/' + 'CS 1332');
     res.sendFile(path + 'active-surveys.html');
+});
+
+app.post('/view-results', function(req, res) {
+    // console.log(req.body.surveyID);
+    var surveyID = req.body.surveyID;
+    var viewSurvey = require('./public/js/view-survey.js');
+    viewSurvey.getSurveyResults('https://openeval-server.herokuapp.com/responses/default/' + surveyID);
+    res.redirect('/view-survey');
 });
 // results of an active survey
 router.get('/view-survey', function(req, res) {
-    var viewSurvey = require('./public/js/view-survey.js');
-    viewSurvey.getSurveyResults('https://openeval-server.herokuapp.com/responses/default/' + '5bff571503a4fc00045bd9b3');
+    // var viewSurvey = require('./public/js/view-survey.js');
+    // viewSurvey.getSurveyResults('https://openeval-server.herokuapp.com/responses/default/' + '5bff571503a4fc00045bd9b3');
     res.sendFile(path + 'view-survey.html');
 });
 // complete an active survey

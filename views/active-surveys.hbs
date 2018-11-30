@@ -18,11 +18,18 @@
 
   <div class="container-fluid">
 
-    <h3>Surveys for {{{message.1.course}}}</h3>
+    <h3>Surveys for {{{message.0.course}}}</h3>
 
-    {{#each message}}
+    <!-- {{#each message}}
       <li><button class={{{this._id}}}>{{{this.name}}}</button></li>
-    {{/each}}
+    {{/each}} -->
+
+    <form action="/view-results" method="post">
+      {{#each message}}
+        <input type="radio" name="surveyID" value="{{this._id}}"> {{{this.name}}}<br>
+      {{/each}}
+      <input type="submit" value="View this survey's results">
+    </form>
 
     <footer>
       <p>OpenEval | Georgia Tech Junior Design | Fall 2018</p>

@@ -27,7 +27,13 @@ module.exports = {
                 const inFile = 'views/view-survey.hbs';
                 const outFile = 'views/view-survey.html';
                 const data = res;
-                console.log(data);
+                // console.log(data);
+                if (Object.keys(data.responses).length == 0) {
+                    const result = '<h3>No results for this survey.</h3>';
+                    // console.log(result);
+                    fs.writeFileSync(outFile, result);
+                    return;
+                }
                 const source = fs.readFileSync(inFile, 'utf8');
                 const template = handlebars.compile(source, {strict: true});
                 const result = template(data);
