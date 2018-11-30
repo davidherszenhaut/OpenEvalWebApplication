@@ -63,3 +63,59 @@ handlebars.registerHelper('ifFirst', function(index, options) {
         return options.inverse(this);
     }
 });
+
+handlebars.registerHelper('ifThird', function(index, options) {
+    if (index === 2) {
+        return options.fn(this);
+    } else {
+        return options.inverse(this);
+    }
+});
+
+handlebars.registerHelper('ifFourth', function(index, options) {
+    if (index === 3) {
+        return options.fn(this);
+    } else {
+        return options.inverse(this);
+    }
+});
+
+handlebars.registerHelper('ifFifth', function(index, options) {
+    if (index === 4) {
+        return options.fn(this);
+    } else {
+        return options.inverse(this);
+    }
+});
+
+handlebars.registerHelper('ifSixth', function(index, options) {
+    if (index === 5) {
+        return options.fn(this);
+    } else {
+        return options.inverse(this);
+    }
+});
+
+handlebars.registerHelper('ifSeventh', function(index, options) {
+    if (index === 6) {
+        return options.fn(this);
+    } else {
+        return options.inverse(this);
+    }
+});
+
+handlebars.registerHelper('ifEighth', function(index, options) {
+    if (index === 7) {
+        return options.fn(this);
+    } else {
+        return options.inverse(this);
+    }
+});
+
+handlebars.registerHelper('ifNinth', function(index, options) {
+    if (index === 8) {
+        return options.fn(this);
+    } else {
+        return options.inverse(this);
+    }
+});

@@ -18,32 +18,35 @@
 
   <div class="container-fluid">
 
-      <p>5ba2780447180893fce90660</p>
-      <p>default</p>
-      <ol>
-        <li>The pace of this course is:</li>
-              <input type="radio" name="pace">Too slow<br>
-              <input type="radio" name="pace">About right<br>
-              <input type="radio" name="pace">Too fast<br>
-        <li>The instructor and/or TA are reachable for questions and feedback:</li>
-              <input type="radio" name="reachable">Yes<br>
-              <input type="radio" name="reachable">Sometimes, but not enough<br>
-              <input type="radio" name="reachable">No<br>
-        <li>If I am to succeed in this course, I will need to do MORE of:</li>
-          <input type="text" id=5ba281f747180893fce90665>
-        <li>If I am to succeed in this course, I will need to do LESS of:</li>
-          <input type="text" id=5ba2820a47180893fce90666>
-        <li>If I am to succeed in this coures, I will need to do the SAME amount of:</li>
-          <input type="text" id=5ba2821347180893fce90667>
-        <li>If I am to succeed in this course, the professor will need to do MORE of:</li>
-          <input type="text" id=5ba2821d47180893fce90668>
-        <li>If I am to succeed in this course, the professor will need to do LESS of:</li>
-          <input type="text" id=5ba2822647180893fce90669>
-        <li>If I am to succeed in this course, the professor will need to do the SAME amount of:</li>
-          <input type="text" id=5ba2823747180893fce9066a>
-        <li>Any additional comments about this course:</li>
-          <input type="text" id=5ba2824247180893fce9066b>
-      </ol>
+    <form method="post" action="/submit-survey">
+        <p>5ba2780447180893fce90660</p>
+        <p>default</p>
+        <ol>
+          <li>The pace of this course is:</li>
+                <input type="radio" name="pace" id="5ba281de47180893fce90663 Too slow" value="Too slow">Too slow<br>
+                <input type="radio" name="pace" id="5ba281de47180893fce90663 About right" value="About right">About right<br>
+                <input type="radio" name="pace" id="5ba281de47180893fce90663 Too fast" value="Too fast">Too fast<br>
+          <li>The instructor and/or TA are reachable for questions and feedback:</li>
+                <input type="radio" name="reachable" id="5ba281ed47180893fce90664 Yes" value="Yes">Yes<br>
+                <input type="radio" name="reachable" id="5ba281ed47180893fce90664 Sometimes, but not enough" value="Sometimes, but not enough">Sometimes, but not enough<br>
+                <input type="radio" name="reachable" id="5ba281ed47180893fce90664 No" value="No">No<br>
+          <li>If I am to succeed in this course, I will need to do MORE of:</li>
+              <input type="text" id="5ba281f747180893fce90665" name="studentmore">
+          <li>If I am to succeed in this course, I will need to do LESS of:</li>
+              <input type="text" id="5ba2820a47180893fce90666" name="studentless">
+          <li>If I am to succeed in this coures, I will need to do the SAME amount of:</li>
+              <input type="text" id="5ba2821347180893fce90667" name="studentsame">
+          <li>If I am to succeed in this course, the professor will need to do MORE of:</li>
+              <input type="text" id="5ba2821d47180893fce90668" name="professormore">
+          <li>If I am to succeed in this course, the professor will need to do LESS of:</li>
+              <input type="text" id="5ba2822647180893fce90669" name="professorless">
+          <li>If I am to succeed in this course, the professor will need to do the SAME amount of:</li>
+              <input type="text" id="5ba2823747180893fce9066a" name="professorsame">
+          <li>Any additional comments about this course:</li>
+              <input type="text" id="5ba2824247180893fce9066b" name="comments">
+        </ol>
+      <input type="submit" value="Submit survey">
+    </form>
 
     <!-- <form>
       <p>The pace of this course is:</p>

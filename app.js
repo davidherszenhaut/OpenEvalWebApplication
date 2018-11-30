@@ -82,6 +82,19 @@ router.get('/view-survey', function(req, res) {
     // viewSurvey.getSurveyResults('https://openeval-server.herokuapp.com/responses/default/' + '5bff571503a4fc00045bd9b3');
     res.sendFile(path + 'view-survey.html');
 });
+
+app.post('/submit-survey', function(req, res) {
+    console.log(req.body.pace);
+    console.log(req.body.reachable);
+    console.log(req.body.studentmore);
+    console.log(req.body.studentless);
+    console.log(req.body.studentsame);
+    console.log(req.body.professormore);
+    console.log(req.body.professorless);
+    console.log(req.body.professorsame);
+    console.log(req.body.comments);
+    res.redirect('/');
+});
 // complete an active survey
 router.get('/complete-survey', function(req, res) {
     var complete = require('./public/js/complete-survey.js');

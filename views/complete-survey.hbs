@@ -18,28 +18,51 @@
 
   <div class="container-fluid">
 
-    {{#each message}}
-      <p>{{{this._id}}}</p>
-      <p>{{{this.type}}}</p>
-      <ol>
-      {{#each this.questions}}
-        <li>{{{this.question}}}</li>
-        {{#ifMC this}}
-          {{#ifFirst @index}}
-            {{#each this.options}}
-              <input type="radio" name="pace">{{{this}}}<br>
+    <form method="post" action="/submit-survey">
+      {{#each message}}
+        <p>{{{this._id}}}</p>
+        <p>{{{this.type}}}</p>
+        <ol>
+        {{#each this.questions}}
+          <li>{{{this.question}}}</li>
+          {{#ifMC this}}
+            {{#ifFirst @index}}
+              {{#each this.options}}
+                <input type="radio" name="pace" id="{{../this.id}} {{this}}" value="{{this}}">{{{this}}}<br>
+              {{/each}}
+            {{else}}
+              {{#each this.options}}
+                <input type="radio" name="reachable" id="{{../this.id}} {{this}}" value="{{this}}">{{{this}}}<br>
             {{/each}}
+            {{/ifFirst}}
           {{else}}
-            {{#each this.options}}
-              <input type="radio" name="reachable">{{{this}}}<br>
-          {{/each}}
-          {{/ifFirst}}
-        {{else}}
-          <input type="text" id={{{this.id}}}>
-        {{/ifMC}}
+            {{#ifThird @index}}
+              <input type="text" id="{{this.id}}" name="studentmore">
+            {{/ifThird}}
+            {{#ifFourth @index}}
+              <input type="text" id="{{this.id}}" name="studentless">
+            {{/ifFourth}}
+            {{#ifFifth @index}}
+              <input type="text" id="{{this.id}}" name="studentsame">
+            {{/ifFifth}}
+            {{#ifSixth @index}}
+              <input type="text" id="{{this.id}}" name="professormore">
+            {{/ifSixth}}
+            {{#ifSeventh @index}}
+              <input type="text" id="{{this.id}}" name="professorless">
+            {{/ifSeventh}}
+            {{#ifEighth @index}}
+              <input type="text" id="{{this.id}}" name="professorsame">
+            {{/ifEighth}}
+            {{#ifNinth @index}}
+              <input type="text" id="{{this.id}}" name="comments">
+            {{/ifNinth}}
+          {{/ifMC}}
+        {{/each}}
+        </ol>
       {{/each}}
-      </ol>
-    {{/each}}
+      <input type="submit" value="Submit survey">
+    </form>
 
     <!-- <form>
       <p>The pace of this course is:</p>

@@ -44,13 +44,19 @@
       <p>List of all courses here</p>
       <div id="class-list-wrapper">
         <ul id="class-list">
-          {{#each message}}
-            {{@index}} {{this}}
-            <!-- <li class={{{this}}}><button>{{{this._id}}}</button></li> -->
+
+          <!-- {{#each message}}
+            <li class="{{_id}}"><button class="btn btn-block">{{_id}}</button></li><br>
+          {{/each}} -->
+
+          {{#each this}}
             {{#each this}}
-              <li class={{{this}}}><button>{{@key}} {{{this}}}</button></li>
+              {{#each this}}
+                <li class="{{this}}"><button class="btn btn-block">{{this}}</button></li><br>
+              {{/each}}
             {{/each}}
           {{/each}}
+
         </ul>
       </div>
     </div>
