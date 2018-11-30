@@ -4,17 +4,23 @@
 
 ### New software features for this release
 
+* Finished the base version of the application.
+
 ### Bug fixes made since the last release
 
 * The search bar in `all-classes.html` now updates the class list automatically, without the user having to press a button to update the class list.
 
 ### Known bugs and defects
 
+* Proper log in has not yet been implemented.
 * The class list in `all-classes.html` currently shows only the course ID, not the course name.
 
 ## Install Guide
 
 ### Prerequisites
+
+* A terminal
+* A web browser
 
 ### Dependent libraries
 
@@ -24,9 +30,7 @@
 ### Download instructions
 
 * The code for the web application can be found [here](https://github.com/dedding4341/OpenEval/tree/master/Web) and [here](https://github.com/davidherszenhaut/OpenEvalWebApplication).
-* The copy of the code can be gotten by cloning the repository using `git clone` or by downloading a ZIP of the repository on GitHub.
-
-### Build instructions
+* A copy of the code can be gotten by cloning the repository using `git clone` or by downloading a ZIP of the repository on GitHub.
 
 ### Installation
 
@@ -34,7 +38,9 @@
 
 ### Run instructions
 
-* Once the appropriate Node.js modules have been installed, start the application by running either `node app.js` or `npm start`.
-* Open a browser type `http://localhost:3000/` in the address bar.
+* Once the appropriate Node.js packages have been installed, start the application by running either `node app.js` or `npm start`.
+* Open a browser and type `http://localhost:3000/login` in the address bar.
 
 ### Troubleshooting
+
+* If there is an error in starting the application, try running `npm i npm` to update npm and then running `npm install` to try installing the required packages again.

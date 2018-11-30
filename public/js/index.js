@@ -44,6 +44,7 @@ module.exports = {
      *
      */
     getRegisteredCourses: function(url) {
+        // console.log(url);
         // get request to API endpoint
         https.get(url, function(res) {
             var body = '';

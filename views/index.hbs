@@ -38,7 +38,7 @@
       <p>List of current courses here</p>
 
         {{#each this}}
-          <li><button onclick="console.log(this.innerHTML)">{{{this.courseNumber}}}: {{{this.courseName}}}</button></li>
+          <li><button onclick="console.log(this.innerHTML.substr(0, this.innerHTML.indexOf(':')).replace(' ', '%20'))">{{{this.courseNumber}}}: {{{this.courseName}}}</button></li>
         {{/each}}
 
       <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newClassModal">+ Add New Class</button>
