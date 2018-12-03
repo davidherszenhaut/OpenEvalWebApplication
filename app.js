@@ -42,6 +42,19 @@ router.get('/', function(req, res) {
     res.sendFile(path + 'index.html');
 });
 
+// registers a professor for a course
+app.post('/register-course', function(req, res) {
+    var courseNumber = req.body.courseNumber;
+    var courseName = req.body.courseName;
+    var formData = {
+        professor: user.username,
+        courseName: courseName,
+        courseNumber: courseNumber
+    };
+    console.log(formData);
+    request.post({url: 'https://openeval-server.herokuapp.com/registeredCoursed/register', formData: formData});
+    res.redirect("/all-classes");
+});
 // list of all courses that can be registered
 router.get('/all-classes', function(req, res) {
     var allClasses = require('./public/js/all-classes.js');

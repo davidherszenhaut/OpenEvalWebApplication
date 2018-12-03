@@ -38,19 +38,35 @@
     </div>
 
     <div class="jumbotron">
+
+      <form action="/register-course" method="post">
+        <table>
+          <tr>
+            <td>Course Number</td>
+            <td><input type="text" name="courseNumber" placeholder="e.g. ACCT 2101"></td>
+          </tr>
+          <tr>
+            <td>Course Name</td>
+            <td><input type="text" name="courseName" placeholder="e.g. Accounting I"></td>
+          </tr>
+        </table>
+        <input type="submit" value="Register">
+      </form>
+
       <p>Search for a course here</p>
       <form action="/search" method="post">
         <label for="courseName">Course name:</label>
         <input id="courseName" type="text" name="courseName" placeholder="e.g. CS 1331" onkeyup="filterCourses(this.value)">
         <!-- <input type="submit" value="Search"> -->
       </form>
+
       <p>List of all courses here</p>
       <div id="class-list-wrapper">
         <ul id="class-list">
 
           {{#each message}}
             {{#each this}}
-                <li class="{{{this}}}">{{@key}}: {{{this}}}</li>
+              <li class="{{{this}}}">{{@key}}: {{{this}}}</li>
             {{/each}}
             <br>
           {{/each}}

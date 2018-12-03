@@ -14,16 +14,16 @@
 
 ### Bug fixes made since the last release
 
-* The search bar in `all-classes.html` now updates the class list automatically, without the user having to press a button to update the class list.
+* The search bar in `all-classes` now updates the class list automatically, without the user having to press a button to update the class list.
 * The browser now displays a message when viewing. a class that has no active surveys and when viewing a survey that has no responses.
 * Students can now post survey responses.
 * Professors can now create new surveys for the course they are looking at.
+* Professors can now fill out a form on the `all-classes` page to register themselves for a course.
 
 ### Known bugs and defects
 
 * The class list in `all-classes` currently shows the course ID in addition to the course number and course name.
 * The class list in `all-classes` now properly hides courses not searched for in the search bar, but the hidden courses still take up space on the screen.
-* Professors do not yet have the ability to register themselves for a course when looking at the course listing.
 
 ## Install Guide
 
